@@ -1,4 +1,5 @@
 #Zahruddin Fanani
+#https://github.com/zahruddin
 
 import requests;
 from bs4 import BeautifulSoup
@@ -16,10 +17,10 @@ soup  = BeautifulSoup(req.text, 'html.parser')
 items = soup.find_all('div','col-xs-12 single-job-ads')
 data = []
 for it in items:
-  posisi = it.find('a','bold').text
-  instansi = ''.join(it.find('p').find('a').text.strip().split('\n'))
-  gaji = ', '.join([s.text.strip() for s in it.find_all('span', 'semi-bold')])
-  if gaji == 'Gaji Dirahasiakan': gaji = 0
+  posisi = it.find('a','bold').text #ambil data posisi yang tersedia
+  instansi = ''.join(it.find('p').find('a').text.strip().split('\n')) #ambil data instansi yang membuka lowongan
+  gaji = ', '.join([s.text.strip() for s in it.find_all('span', 'semi-bold')]) #ambil data gaji yang di tawarkan 
+  if gaji == 'Gaji Dirahasiakan': gaji = 0 # jika gaji di rahasiakan akan di ubah jadi 0
   data.append([posisi, instansi,gaji])
 
 df = pd.DataFrame(data, columns=['posisi','instansi','gaji'])
