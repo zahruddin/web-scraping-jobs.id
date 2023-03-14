@@ -1,21 +1,8 @@
-# Kelompok 2
-# Nama  : Zahruddin Fanani
-# Nim   : 2102010006
-# Prodi : Teknologi Informasi
-#
-# Nama  : Defitri Karunia Agustin
-# Nim     : 2102010030
-# Prodi : Teknologi Informasi
-
+#Zahruddin Fanani
 
 import requests;
 from bs4 import BeautifulSoup
 import pandas as pd
-
-# kelompok Ganjil
-# key = 'programmer'
-# kelompok Genap
-# key = 'web designer'
 
 key = input('masukan keyword: ')
 
